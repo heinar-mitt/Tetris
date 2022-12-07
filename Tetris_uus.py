@@ -2,6 +2,7 @@ import pygame
 from kujundid import *
 from mänguaken import *
 from mängufunktsioonid import *
+from testid import *
 
 #globaalsed mängu andmed:
 laius = 550
@@ -50,13 +51,17 @@ def main(display):
                     if not leidub_ruumi(praegune_kujund, mänguväli) == True:
                         praegune_kujund.x -= 1          
                 if event.key == pygame.K_UP:
-                    praegune_kujund.pööramine = praegune_kujund.pööramine + 1 % len(praegune_kujund.kujund) 
+                    praegune_kujund.pööramine = praegune_kujund.pööramine + 1  
                     if not leidub_ruumi(praegune_kujund, mänguväli) == True:
-                        praegune_kujund.pööramine = praegune_kujund.pööramine - 1 % len(praegune_kujund.kujund)
+                        praegune_kujund.pööramine = praegune_kujund.pööramine - 1
                 if event.key == pygame.K_DOWN:
                     praegune_kujund.y += 1
                     if not leidub_ruumi(praegune_kujund, mänguväli) == True:
                         praegune_kujund.y -= 1
+                        
+                #test1(praegune_kujund)
+                #test2(praegune_kujund)
+                #test4(praegune_kujund)
         kujundi_positsioon = muuda_kujundi_asendit(praegune_kujund)
 
         for i in range(len(kujundi_positsioon)):                                #kujundite värvimiseks, y>=0 on sellepärast, et muidu võib kujundi mõni osa tekkida mänguvälja põhja, enne kui kukkuma hakkab
@@ -71,7 +76,9 @@ def main(display):
             praegune_kujund = järgmine_kujund
             järgmine_kujund = leia_kujund()
             muuda_kujundit = False
-            eemalda_read(mänguväli, täidetud_positsioon)
+            eemalda = eemalda_read(mänguväli, täidetud_positsioon)
+            eemalda
+            #test3(eemalda)
         
         joonista_aken(display)
         joonista_järgmine_kujund(järgmine_kujund, display)
