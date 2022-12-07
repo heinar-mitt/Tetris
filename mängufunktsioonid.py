@@ -1,4 +1,4 @@
-def muuda_kujundi_asendit(kujund): #ERRROROROOROROROROORO
+def muuda_kujundi_asendit(kujund): 
     positsioonid = []
     asend = kujund.kujund[kujund.pööramine % len(kujund.kujund)]
     
